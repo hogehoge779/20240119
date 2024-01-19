@@ -33,7 +33,7 @@
             font-weight: 1000;
         }
 
-        #vertical{
+        #vertical {
             writing-mode: vertical-rl;
             vertical-align: text-bottom;
             font-size: 2rem;
@@ -78,17 +78,17 @@
 <body>
     <p id="calendar"></p>
     <p id="clock"></p>
-    <p id="information-banner"> <span class="big-font" id="news-banner__content"></span> </p>
+    <p id="information-banner"> <span class="middle-font" id="news-banner__content"></span> </p>
 </body>
 <script>
     let informationText = {
-        0: "日曜日　ヘルパー　09:00～",
-        1: "月曜日　ヘルパー（買い物）11:00～",
-        2: "火曜日　ヘルパー　09:00～",
-        3: "水曜日　訪問看護　09:00～",
-        4: "木曜日　ヘルパー　11:00～",
-        5: "金曜日　ヘルパー（清掃）09:00～",
-        6: "土曜日　ヘルパー　11:00～",
+        0: "日曜日 9:00 ヘルパー",
+        1: "月曜日 11:00 ヘルパー(買い物)",
+        2: "火曜日 9:00 ヘルパー",
+        3: "水曜日 9:00 訪問看護",
+        4: "木曜日 11:00 ヘルパー",
+        5: "金曜日 9:00 ヘルパー(清掃)",
+        6: "土曜日 11:00 ヘルパー",
     };
 
     $(function () {
@@ -112,7 +112,7 @@
         // 年    
         let year = date.getFullYear();
         // 月    
-        let month = (date.getMonth() + 1).toString().padStart(2, '0');
+        let month = (date.getMonth() + 1)
         // 日    
         let day = date.getDate().toString().padStart(2, '0');;
         // 曜日    
