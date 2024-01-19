@@ -33,6 +33,12 @@
             font-weight: 1000;
         }
 
+        #vertical{
+            writing-mode: vertical-rl;
+            vertical-align: text-bottom;
+            font-size: 2rem;
+        }
+
         /* バナー本体 */
         #information-banner {
             display: block;
@@ -128,7 +134,7 @@
         let template =
             `<div>
                     <div id="year">
-                        <span class="middle-font">${year}</span>年（令和<span class="middle-font">${eraYear}</span>年）
+                        <span>${year}</span>年（令和<span>${eraYear}</span>年）
                     </div>
                     <div id="date">
                         <span class="huge-font">${month}</span>月<span class="huge-font">${day}</span>日
@@ -150,7 +156,7 @@
         // 秒    
         let second = date.getSeconds().toString().padStart(2, '0');
 
-        // 午前0時00分 カレンダー書き換え    
+        // 午前0時00分 カレンダー書き換え   
         if (hour == "00" && minute == "00") {
             calendar()
         }
@@ -162,7 +168,7 @@
 
         let template =
             `<div>
-                    <div id="time"> ${amPm}<span class="big-font">${hour12}</span>時<span class="big-font">${minute}</span>分${second}秒</div>
+                    <div id="time"><span id="vertical">${amPm}</span><span class="big-font">${hour12}</span>時<span class="big-font">${minute}</span>分${second}秒</div>
                 </div>`
         $('#clock').html(template);
     }
